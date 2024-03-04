@@ -1,0 +1,79 @@
+h2 {
+  display: block;
+  color: white;
+  padding-left: 50px;
+}
+
+.navBar {
+  width: 100vw;
+  background-color: rgb(164, 114, 184);
+  color: white;
+  font-size: 24px;
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+nav ul li {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  padding-right: .5em;
+  padding-left: .5em;
+  height: 100%;
+}
+
+nav ul li:hover {
+  color: black;
+  background-color: rgb(199, 139, 223);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+
+.content {
+  justify-content: center;
+  align-items: center;
+  max-width: fit-content;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.movies {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie {
+  justify-content: center;
+  width: 20%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: white;
+}
+.poster {
+}
+.movie img {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+.movieDetails span {
+  float: right;
+}
