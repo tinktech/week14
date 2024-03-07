@@ -60,20 +60,45 @@ a:hover {
 
 .movie {
   justify-content: center;
-  width: 20%;
   margin: 10px;
   padding: 10px;
   border: 1px solid gray;
   border-radius: 10px;
   background-color: white;
 }
-.poster {
+.movieBody {
+  display: flex;
+}
+.movieInfo {
+  width: 325px;
 }
 .movie img {
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
+  max-height: 500px;
 }
 .movieDetails span {
+  float: right;
+}
+.feedback {
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid gray;
+}
+
+form label {
+  padding: 2px;
+}
+.reviewForm {
+  margin-bottom: 20px;
+}
+.review {
+  margin: 5px;
+  padding: 0px 10px 10px 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.reviewHead span {
   float: right;
 }

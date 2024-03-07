@@ -1,37 +1,59 @@
-import imdbLogo from "./resources/imdb.png"
+import React from 'react';
+import imdbLogo from "./resources/imdb.png";
+import Reviews from './reviews';
+// import ReviewForm from './reviewForm';
 
-export default function Movie({allMovies}) {
+export default class Movie extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: props.title,
+      poster: props.poster,
+      synopsis: props.synopsis,
+      releaseYear: props.releaseYear,
+      rated: props.rated,
+      duration: props.duration,
+      imdb: props.imdb,
+      reviews: props.reviews
+    }
+  }
 
-  let moviesArray = allMovies;
-  
-  return (
-    <div className="movies">
-    {moviesArray.map((movie, index) => (
-      <div key={index} className="movie">
-        <h3>{movie.title}</h3>
-        <div className="poster">
-          <img
-            src={movie.poster}
-            alt={`${movie.title} poster`}
-            max-width="100%"
-          />
+
+  render() {
+    // console.log(this.state.reviews);
+    return (
+      <div className="movie">
+        <div className='movieHead'>
+          <h3>{this.state.title}</h3>
         </div>
-        <div className="movieDetails">
-          <p>{movie.releaseYear} ∙ {movie.rated} ∙ {movie.duration}
-          <span><a href={movie.imdb}>
-            <img
-              src={imdbLogo}
-              height="25px"
-            />
-          </a></span>
-          </p>
+        <div className='movieBody'>
+          <div className='movieInfo'>
+            <div className="poster">
+              <img
+                src={this.state.poster}
+                alt={`${this.state.title} poster`}
+                max-width="100%"
+              />
+            </div>
+            <div className="movieDetails">
+              <p>{this.state.releaseYear} ∙ {this.state.rated} ∙ {this.state.duration}
+              <span><a href={this.state.imdb}>
+                <img
+                  src={imdbLogo}
+                  height="25px"
+                />
+              </a></span>
+              </p>
+            </div>
+            <p>
+              {this.state.synopsis}
+            </p>
+          </div>
+          <div className='feedback'>
+            <Reviews reviews={this.state.reviews}/>
+          </div>
         </div>
-        <p>
-          {movie.synopsis}
-        </p>
-
       </div>
-    ))}
-    </div>
-  )
+    )
+  }
 }
