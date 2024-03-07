@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Review from './review';
 import ReviewForm from './reviewForm';
 
@@ -9,28 +9,29 @@ export default class Reveiws extends React.Component {
       reviews: props.reviews
     }
   }
-  render () {
-    const [reviews, setReviews] = useState(this.state.reviews);
 
-    function handleAddReview(name, stars, content) {
-      setReviews([
+  addReview(name, stars, content) {
+    this.setState(({reviews}) => ({
+      reviews: [
         ...reviews,
         {
           name: name,
           stars: stars,
-          content: content,
-        },
-      ]);
-    }
+          content: content
+        }
+      ]
+    }));
+  }
 
-    // let reviews;
+  render () {
+    let reviews;
     if (this.state.reviews) {
       reviews = this.state.reviews.map((review, index) => <Review key={index} {...review} />);
     }
     return (
       <div className="reviews">
         <div className='reviewForm'>
-          <ReviewForm onAddReview={handleAddReview} />
+          <ReviewForm onAddReview={this.addReview.bind(this)} />
         </div>
         {reviews}
       </div>
