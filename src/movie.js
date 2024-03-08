@@ -32,7 +32,6 @@ export default class Movie extends React.Component {
               <img
                 src={this.state.poster}
                 alt={`${this.state.title} poster`}
-                max-width="100%"
               />
             </div>
             <div className="movieDetails">

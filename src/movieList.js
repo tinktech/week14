@@ -24,11 +24,6 @@ export const movieList = [
         name: "Tori",
         stars: "★★★★★",
         content: "Amazing movie!"
-      },
-      {
-        name: "Trin",
-        stars: "★★★★★",
-        content: "AGREED!"
       }
     ]
   },

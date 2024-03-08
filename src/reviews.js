@@ -33,7 +33,9 @@ export default class Reveiws extends React.Component {
         <div className='reviewForm'>
           <ReviewForm onAddReview={this.addReview.bind(this)} />
         </div>
-        {reviews}
+        <div className='reviewList'>
+          {reviews}
+        </div>
       </div>
     )
   }

@@ -29,11 +29,14 @@ render() {
         </select>
       </div>
       <div>
-        <input
-          placeholder="content"
+        <textarea
+          rows={3}
+          cols={32}
+          placeholder="Review"
           value={this.state.content}
           onChange={(e) => this.setState({content: e.target.value})}
         />
+        <br />
         <button onClick={() => {
             this.state.onAddReview(this.state.name, this.state.stars, this.state.content);
         }}>
